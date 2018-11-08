@@ -10,7 +10,8 @@ import android.widget.Button;
 
 public class SummaryActivity extends AppCompatActivity {
     private Button oVrati;
-    private String sImePrezime;
+    private String sIme;
+    private String sPrezime;
     private String sPredmet;
     private TextView oImePrezime;
     private TextView oPredmet;
@@ -19,10 +20,15 @@ public class SummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         final Bundle oExtras = getIntent().getExtras();
-        sImePrezime = oExtras.getString("imePrezime");
+        sIme = oExtras.getString("irezime");
+        sPrezime = oExtras.getString("prezime");
         sPredmet = oExtras.getString("predmet");
-        oImePrezime = (TextView)findViewById(R.id.tvImePrezimeUpis);
+        oIme = (TextView)findViewById(R.id.tvImeUpis);
+        oPrezime = (TextView)findViewById(R.id.tvImeUpis);
         oPredmet = (TextView)findViewById(R.id.tvPredmetUpis);
+        oIme.setText(sIme);
+        oPrezime.setText(sPrezime);
+        oPredmet.setText(sPredmet);
         oVrati = (Button)findViewById(R.id.button3);
         oVrati.setOnClickListener(new View.OnClickListener() {
             @Override
