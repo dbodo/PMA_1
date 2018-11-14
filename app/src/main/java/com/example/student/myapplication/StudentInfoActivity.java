@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class StudentInfoActivity extends AppCompatActivity {
     private Button oBtnUpisi;
@@ -30,8 +29,8 @@ public class StudentInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info);
         final Bundle oExtras = getIntent().getExtras();
-        sIme = oExtras.getString("imePrezime");
-        sPrezime = oExtras.getString("imePrezime");
+        sIme = oExtras.getString("ime");
+        sPrezime = oExtras.getString("prezime");
         sDatumRodenja = oExtras.getString("datumRodenja");
         oInputPredmet = (EditText)findViewById(R.id.etPredmet);
         oInputImeProf = (EditText)findViewById(R.id.etImeProf);

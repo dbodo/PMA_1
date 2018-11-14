@@ -48,7 +48,7 @@
             />
     </LinearLayout>
 
-    <view
+    <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -76,11 +76,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="65"
-            android:inputType="textPersonName"
-            android:text="Unesite datum rođenja"/>
+            android:inputType="textPersonName" />
     </LinearLayout>
 
-    <view
+    <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="1dp"

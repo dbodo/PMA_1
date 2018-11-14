@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class PersonalInfoActivity extends AppCompatActivity {
     private Button oBtnUpisi;
@@ -22,7 +24,6 @@ public class PersonalInfoActivity extends AppCompatActivity {
         oInputIme = (EditText)findViewById(R.id.etIme);
         oInputPrezime = (EditText)findViewById(R.id.etPrezime);
         oInputDatumRodenja = (EditText)findViewById(R.id.etDatumRodenja);
-
         oBtnUpisi = (Button)findViewById(R.id.button);
         oBtnUpisi.setOnClickListener(new View.OnClickListener() {
             @Override
