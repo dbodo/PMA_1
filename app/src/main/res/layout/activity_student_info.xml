@@ -33,14 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Profesor:" />
+            android:text="@string/profName" />
         <EditText
             android:id="@+id/etImeProf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:inputType="textPersonName"
-            android:text="Ime" />
+            android:hint="@string/Name" />
 
         <EditText
             android:id="@+id/etPrezimeProf"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:inputType="textPersonName"
-            android:text="Prezime"
+            android:hint="@string/Surname"
             />
     </LinearLayout>
 
@@ -56,6 +56,7 @@
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/lay1"/>
     <LinearLayout
@@ -75,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="65"
             android:inputType="textPersonName"
-            android:text="Predmet"/>
+            android:text="@string/Class"/>
     </LinearLayout>
 
     <View
@@ -103,20 +104,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:inputType="textPersonName"
-            android:text="Akademska godina" />
+            android:hint="@string/AcademicYear" />
         <EditText
             android:id="@+id/etSatiPredavanja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:inputType="textPersonName"
-            android:text="Broj sati predavanja" />
+            android:hint="@string/LectureHours" />
     </LinearLayout>
     <EditText
         android:id="@+id/etSatiLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Broj sati Labosa"
+        android:hint="@string/LabHours"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:inputType="textPersonName"
@@ -135,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="DALJE"
+        android:text="@string/Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
