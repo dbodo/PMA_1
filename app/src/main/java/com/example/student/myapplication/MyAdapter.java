@@ -9,38 +9,44 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+{
     List<String> dataList;
-    public MyAdapter(List<String> myDataset){
+    public MyAdapter(List<String> myDataset)
+    {
         dataList = myDataset;
     }
+
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType){
-        if(viewType==0){
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType)
+    {
+        if(viewType==0) {
             TextView view = (TextView)LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.header_layout, viewGroup, false);
             return new HeaderViewHolder(view);
         }
         else {
             TextView view = (TextView) LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.student_layout, viewGroup, false);
-            return new HeaderViewHolder(view);
+            return new StudentViewHolder(view);
         }
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position)
+    {
                     HeaderViewHolder myViewHolder = (HeaderViewHolder) viewHolder;
                     myViewHolder.headerTextView.setText(dataList.get(position));
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return dataList.size();
     }
 
     @Override
-    public int getItemViewType(int position){
+    public int getItemViewType(int position)
+    {
         if(position==0){
             return 0;
         }
