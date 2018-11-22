@@ -34,6 +34,7 @@ public class SummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         final Bundle oExtras = getIntent().getExtras();
+
         sIme = oExtras.getString("ime");
         sPrezime = oExtras.getString("prezime");
         sDatumRodenja = oExtras.getString( "datumRodenja");
@@ -43,6 +44,7 @@ public class SummaryActivity extends AppCompatActivity {
         sAkGodina = oExtras.getString("akGodina");
         sSatiPred = oExtras.getString("satiPred");
         sSatiLab = oExtras.getString("satiLab");
+
         oIme = (TextView)findViewById(R.id.tvImeUpis);
         oPrezime = (TextView)findViewById(R.id.tvPrezimeUpis);
         oDatumRodenja = (TextView)findViewById(R.id.tvDatumRodenjaUpis);
@@ -52,6 +54,7 @@ public class SummaryActivity extends AppCompatActivity {
         oAkGodina = (TextView)findViewById(R.id.tvAkGodinaUpis);
         oSatiPred = (TextView)findViewById(R.id.tvSatiPredavanjaUpis);
         oSatiLab = (TextView)findViewById(R.id.tvSatiLabUpis);
+
         oIme.setText(sIme);
         oPrezime.setText(sPrezime);
         oDatumRodenja.setText(sDatumRodenja);
