@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<String> oItemList;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new MyAdapter(myDataSet);
+        mAdapter = new MyAdapter(this, oItemList);
         mRecyclerView.setAdapter(mAdapter);
     }
 }
