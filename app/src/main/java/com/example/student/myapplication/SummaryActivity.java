@@ -68,7 +68,9 @@ public class SummaryActivity extends AppCompatActivity {
         oVrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent oVratiNaPocetnu = new Intent(getApplicationContext(), PersonalInfoActivity.class);
+                Intent oVratiNaPocetnu = new Intent(getApplicationContext(), MyActivity.class);
+                oVratiNaPocetnu.putExtra("ime", sIme);
+                oVratiNaPocetnu.putExtra("prezime", sPrezime);
                 startActivity(oVratiNaPocetnu);
             }
         });

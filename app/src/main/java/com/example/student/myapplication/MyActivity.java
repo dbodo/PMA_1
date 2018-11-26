@@ -1,9 +1,14 @@
 package com.example.student.myapplication;
 
+import android.app.Person;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.student.myapplication.adapter.MyAdapter;
 import com.example.student.myapplication.model.Student;
@@ -13,6 +18,9 @@ import java.util.List;
 
 public class MyActivity extends AppCompatActivity {
     private RecyclerView recView;
+    private String sIme;
+    private String sPrezime;
+    private Button oBtnNoviStudent;
 
 
     @Override
@@ -21,18 +29,31 @@ public class MyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
+        Bundle oExtras = getIntent().getExtras();
+        if(oExtras != null){
+            sIme = oExtras.getString("ime");
+            sPrezime = oExtras.getString("prezime");
+        }
+
         recView = (RecyclerView) findViewById(R.id.my_recycler_view);
         List<Object>studentList = generateList();
         initializeRecyclerView(recView,studentList);
+
+        oBtnNoviStudent = (Button)findViewById(R.id.button4);
+        oBtnNoviStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent oNoviStudent = new Intent(getApplicationContext(), PersonalInfoActivity.class);
+                startActivity(oNoviStudent);
+            }
+        });
     }
+
     List<Object> generateList()
     {
         List<Object> list = new ArrayList<>();
         list.add("Studenti");
-        list.add(new Student("Ivan", "Ivic"));
-        list.add(new Student("Luka", "Lukic"));
-        list.add(new Student("Luka", "Modric"));
-        list.add(new Student("Ivan", "Horvat"));
+        list.add(new Student(sIme, sPrezime));
         return list;
     }
     void initializeRecyclerView(RecyclerView recyclerView, List<Object> studentList)
