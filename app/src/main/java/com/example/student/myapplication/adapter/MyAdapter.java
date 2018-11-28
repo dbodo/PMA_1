@@ -19,7 +19,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private List<Object> dataList;
 
-    public MyAdapter(List<Object> dataList){
+    public MyAdapter(List<Object> dataList)
+    {
         this.dataList = dataList;
     }
 
@@ -51,6 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             Student student = (Student) data;
             ((StudentViewHolder)viewHolder).tvStudentNameLabel.setText(student.getName());
             ((StudentViewHolder)viewHolder).tvStudentSurnameLabel.setText(student.getLastName());
+            ((StudentViewHolder)viewHolder).tvStudentPredmetLabel.setText(student.getPredmet());
         }
     }
 
@@ -84,11 +86,13 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     class StudentViewHolder extends RecyclerView.ViewHolder{
         TextView tvStudentNameLabel;
         TextView tvStudentSurnameLabel;
+        TextView tvStudentPredmetLabel;
         public StudentViewHolder(@NonNull View itemView)
         {
             super(itemView);
             tvStudentNameLabel = itemView.findViewById(R.id.tvStudentName);
             tvStudentSurnameLabel = itemView.findViewById(R.id.tvStudentSurname);
+            tvStudentPredmetLabel = itemView.findViewById(R.id.tvStudentPredmet);
         }
     }
 }

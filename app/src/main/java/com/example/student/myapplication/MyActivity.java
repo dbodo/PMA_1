@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.student.myapplication.adapter.MyAdapter;
@@ -20,6 +22,7 @@ public class MyActivity extends AppCompatActivity {
     private RecyclerView recView;
     private String sIme;
     private String sPrezime;
+    private String sPredmet;
     private Button oBtnNoviStudent;
 
 
@@ -33,11 +36,17 @@ public class MyActivity extends AppCompatActivity {
         if(oExtras != null){
             sIme = oExtras.getString("ime");
             sPrezime = oExtras.getString("prezime");
+            sPredmet = oExtras.getString("predmet");
         }
 
         recView = (RecyclerView) findViewById(R.id.my_recycler_view);
         List<Object>studentList = generateList();
         initializeRecyclerView(recView,studentList);
+
+        Spinner spinner = (Spinner) findViewById(R.id.my_spinner);
+        ArrayAdapter<CharSequence> oAdapter = ArrayAdapter.createFromResource(this, R.array.my_spinner, android.R.layout.simple_spinner_item);
+        oAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(oAdapter);
 
         oBtnNoviStudent = (Button)findViewById(R.id.button4);
         oBtnNoviStudent.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +62,7 @@ public class MyActivity extends AppCompatActivity {
     {
         List<Object> list = new ArrayList<>();
         list.add("Studenti");
-        list.add(new Student(sIme, sPrezime));
+        list.add(new Student(sIme, sPrezime, sPredmet));
         return list;
     }
     void initializeRecyclerView(RecyclerView recyclerView, List<Object> studentList)

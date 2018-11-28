@@ -9,4 +9,9 @@
     <string name="LabHours">Laboratory Hours</string>
     <string name="Next">Next</string>
     <string name="app_name">LV3</string>
+    <string-array name="my_spinner">
+        <item>HR</item>
+        <item>EN</item>
+        <item>HU</item>
+    </string-array>
 </resources>

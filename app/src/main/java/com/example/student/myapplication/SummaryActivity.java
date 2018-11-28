@@ -71,6 +71,7 @@ public class SummaryActivity extends AppCompatActivity {
                 Intent oVratiNaPocetnu = new Intent(getApplicationContext(), MyActivity.class);
                 oVratiNaPocetnu.putExtra("ime", sIme);
                 oVratiNaPocetnu.putExtra("prezime", sPrezime);
+                oVratiNaPocetnu.putExtra("predmet", sPredmet);
                 startActivity(oVratiNaPocetnu);
             }
         });
