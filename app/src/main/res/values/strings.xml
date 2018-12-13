@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="Name">Name</string>
+    <string name="Surname">Surname</string>
+    <string name="DoB">Date of Birth</string>
+    <string name="profName">Profesor</string>
+    <string name="Class">Subject</string>
+    <string name="AcademicYear">Academic year</string>
+    <string name="LectureHours">Lecture Hours</string>
+    <string name="LabHours">Laboratory Hours</string>
+    <string name="Next">Next</string>
+    <string name="app_name">LV3</string>
+    <string-array name="my_spinner">
+        <item>HR</item>
+        <item>EN</item>
+        <item>HU</item>
+    </string-array>
 </resources>
